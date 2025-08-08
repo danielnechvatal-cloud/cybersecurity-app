@@ -1,0 +1,40 @@
+:root {
+  --bg-color: #0f172a;
+  --text-color: #f1f5f9;
+}
+body {
+  font-family: Arial, sans-serif;
+  background: var(--bg-color);
+  color: var(--text-color);
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+.container {
+  max-width: 600px;
+  margin: auto;
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 10px;
+}
+section {
+  margin-bottom: 30px;
+}
+input, button, textarea {
+  padding: 10px;
+  margin-top: 10px;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+}
+button {
+  background-color: #3b82f6;
+  color: white;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #2563eb;
+}
+textarea {
+  resize: vertical;
+  height: 80px;
+}
