@@ -1,12 +1,6 @@
 <!DOCTYPE html>
 <html lang="cs">
-<head><link rel="manifest" href="manifest.json">
-<script>
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('sw.js');
-  }
-</script>
-  
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>CyberSecurity App</title>
@@ -18,11 +12,79 @@
   <div class="container">
     <h1>🛡️ CyberSecurity App</h1>
 
-    <!-- Sekce pro různé funkce aplikace -->
-    … (všechny sekce jako předtím: skener hesla, generátor, validace emailu, 2FA, šifrování, registrace/přihlášení, admin, témata) …
+    <!-- Heslo skener -->
+    <section>
+      <h2>🧪 Ověření síly hesla</h2>
+      <input type="password" id="passwordInput" placeholder="Zadejte heslo">
+      <button onclick="checkPassword()">Zkontroluj</button>
+      <p id="passwordStrength"></p>
+    </section>
 
+    <!-- Generátor hesla -->
+    <section>
+      <h2>🔐 Generátor hesla</h2>
+      <button onclick="generatePassword()">Generuj</button>
+      <input type="text" id="generatedPassword" readonly>
+    </section>
+
+    <!-- Validace emailu -->
+    <section>
+      <h2>📧 Validátor e-mailu</h2>
+      <input type="email" id="emailInput" placeholder="Zadejte e-mail">
+      <button onclick="validateEmail()">Validuj</button>
+      <p id="emailValidation"></p>
+    </section>
+
+    <!-- 2FA -->
+    <section>
+      <h2>🧾 2FA ověření</h2>
+      <button onclick="generate2FACode()">Získat 2FA kód</button>
+      <p id="generated2FA"></p>
+      <input type="text" id="user2FA" placeholder="Zadej kód">
+      <button onclick="verify2FA()">Ověřit</button>
+      <p id="2FAResult"></p>
+    </section>
+
+    <!-- Šifrování -->
+    <section>
+      <h2>🔏 Šifrování / Dešifrování</h2>
+      <textarea id="plaintext" placeholder="Text k zašifrování"></textarea>
+      <input type="password" id="encryptionKey" placeholder="Šifrovací klíč">
+      <button onclick="encryptText()">Zašifruj</button>
+      <p id="encryptedText"></p>
+
+      <textarea id="ciphertext" placeholder="Šifrovaný text k dešifrování"></textarea>
+      <input type="password" id="decryptionKey" placeholder="Dešifrovací klíč">
+      <button onclick="decryptText()">Dešifruj</button>
+      <p id="decryptedText"></p>
+    </section>
+
+    <!-- Registrace a login -->
+    <section>
+      <h2>👤 Registrace / Přihlášení</h2>
+      <input type="text" id="regUsername" placeholder="Nové uživatelské jméno">
+      <input type="password" id="regPassword" placeholder="Nové heslo">
+      <button onclick="registerUser()">Registrovat</button>
+
+      <input type="text" id="loginUsername" placeholder="Uživatelské jméno">
+      <input type="password" id="loginPassword" placeholder="Heslo">
+      <button onclick="loginUser()">Přihlásit</button>
+      <p id="authResult"></p>
+    </section>
+
+    <!-- Admin panel -->
+    <section id="adminPanel" style="display:none">
+      <h2>🧑‍💻 Admin Panel</h2>
+      <p>Jen pro admina!</p>
+    </section>
+
+    <!-- Theme -->
+    <section>
+      <h2>🎨 Motiv</h2>
+      <button onclick="toggleTheme()">🌓 Přepni motiv</button>
+    </section>
   </div>
+
   <script src="script.js"></script>
 </body>
 </html>
-
